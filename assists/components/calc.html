@@ -1,0 +1,53 @@
+<div class="p-8">
+    <p ng:hide="allRecipes" class="text-red-500 text-lg font-semibold">"{{params.persona_name}}" not found!</p>
+  
+    <div ng:show="allRecipes" class="mt-4">
+      <p class="text-2xl font-semibold">{{numRecipes}} Recipes - {{persona.name}} ({{persona.level}} / {{persona.arcana}})</p>
+      <span class="text-red-500" ng:show="persona.max">Social link must be maxed!</span>
+      <span class="text-slateblue" ng:show="persona.item">Requires an item from one of Elizabeth's requests!</span>
+  
+      <div class="pagination mt-4 flex items-center g-4" style="gap: 5px;">
+        <span class="cursor-pointer" ng:click="pageNum = 0">⇤⇤</span>
+        <span class="cursor-pointer" ng:click="pageNum = pageNum - 1">⇤</span>
+        <span class="ml-4">{{pageNum + 1}} / {{ceil(numRecipes / perPage)}}</span>
+        <span class="cursor-pointer ml-4" ng:click="pageNum = pageNum + 1">⇥</span>
+        <span class="cursor-pointer" ng:click="pageNum = lastPage">⇥⇥</span>
+      </div>
+  
+      <div id="search" class="mt-4 flex items-center">
+        <label for="filter" class="text-gray-600 mr-4">Filter:</label>
+        <input type="text" id="filter" name="filter" class="w-2/3 p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400">
+        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-4" ng:click="filter = ''">
+          Clear
+        </button>
+      </div>
+  
+      <div class="overflow-x-auto mt-4">
+        <table class="w-full table-auto border-collapse border border-gray-300">
+          <thead>
+            <tr>
+                <th class="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">#</th>
+                <th class="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Cost</th>    
+              <th class="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Ingredients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng:repeat="recipe in recipes" class="border-b border-gray-300">
+              <td class="px-6 py-4">{{recipe.num + 1}}</td>
+              <td class="px-6 py-4">{{recipe.cost | number}} ¥</td>
+              <td class="px-6 py-4">
+                <ul class="list-disc pl-6">
+                  <li ng:repeat="persona in recipe.sources">
+                    <a href='#/persona/{{persona.name}}' class="text-indigo-600 hover:text-indigo-900">
+                      {{persona.name}} ({{persona.level}} / {{persona.arcana}})
+                    </a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,48 @@
+<div class="p-8">
+  <h4 class="text-center text-3xl font-bold mt-10 mb-4">Persona list</h4>
+  
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+      <div class="w-full md:w-7/12 md:mr-4 flex items-center">
+        <label for="filter" class="text-gray-600 mr-2">Filter:</label>
+        <input type="text" id="filter" name="filter" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400">
+      </div>
+      <div class="w-full md:w-3/12 mt-2 md:mt-0 pl-2">
+        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-full" ng:click="filter = ''">
+          Clear
+        </button>
+      </div>
+    </div>
+
+  <table class="w-full table-auto">
+    <thead>
+      <tr>
+        <th class="hidden md:table-cell px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+          <a href='#/list/level'>Level</a>
+        </th>
+        <th class="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+          <a href='#/list/name'>Name</a>
+        </th>
+        <th class="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+          <a href='#/list/arcana'>Arcana</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <!-- Your Angular.js loop here -->
+      <tr ng:repeat="persona in personae.$orderBy(sortBy).$filter(filter)">
+        <td class="hidden md:table-cell px-6 py-4">
+          {{persona.level}}
+        </td>
+        <td class="px-6 py-4">
+          <a href='#/persona/{{persona.name}}' class="text-indigo-600 hover:text-indigo-900">
+            {{persona.name}}
+          </a>
+        </td>
+        <td class="px-6 py-4">
+          {{persona.arcana}}
+        </td>
+      </tr>
+      <!-- Repeat your data to have more than 100 rows -->
+    </tbody>
+  </table>
+</div>
