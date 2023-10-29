@@ -5,6 +5,7 @@ $accent-color: #FF4081;
 /* Apply Material Design Typography */
 body {
     font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
 }
 
 /* Add a bit of padding to the body */
