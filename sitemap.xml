@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Persona 4 Golden Fusion Calculator -->
+    <url>
+        <loc>https://personacalculator.com/Persona4Golden/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Persona 4 Fusion Calculator -->
+    <url>
+        <loc>https://personacalculator.com/Persona4/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Persona 3 FES Fusion Calculator -->
+    <url>
+        <loc>https://personacalculator.com/Persona3FES/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Persona 3 Portable Fusion Calculator -->
+    <url>
+        <loc>https://personacalculator.com/Persona3Portable/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
