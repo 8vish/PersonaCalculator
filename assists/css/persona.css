@@ -46,17 +46,6 @@ p {
     overflow-x: auto;
 }
 
-h1 {
-    text-align: center;
-    margin: 10px;
-    font-size: 2.5rem;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    /* Added color and blur */
-    padding: 10px;
-    /* Added padding for better spacing */
-}
 
 #search {
     align-items: center;
