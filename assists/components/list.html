@@ -1,24 +1,33 @@
-<p>
-  <label for="filter">Filter:</label>
-  <input type="text" id="filter" size="30" name="filter">
-  <button ng-click="filter = ''">Clear</button>
-</p>
+<div class="container">
+ <!-- <h4 style="text-align: center; margin: 10px; box-shadow: inset; margin-top: 50px; font-size: 2rem;">Persona list</h4>-->
+  <div class="row">
+    <div id="search">
+      <div class="input-field col s8 text-center">
+        <input type="text" id="filter" name="filter">
+        <label for="filter" class="active">Filter:</label>
+      </div>
 
-
-<table id="list">
-  <caption>Personae</caption>
-  <thead>
-    <tr>
-      <th><a href='#/list/level'>Level</a></th>
-      <th><a href='#/list/name'>Name</a></th>
-      <th><a href='#/list/arcana'>Arcana</a></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng:repeat="persona in personae.$orderBy(sortBy).$filter(filter)">
-      <td>{{persona.level}}</td>
-      <td><a href='#/persona/{{persona.name}}'>{{persona.name}}</a></td>
-      <td>{{persona.arcana}}</td>
-    </tr>
-  </tbody>
-</table>
+      <div class="input-field col s4">
+        <button class="btn waves-effect waves-light right-align" ng:click="filter = ''">
+          Clear
+        </button>
+      </div>
+    </div>
+  </div>
+  <table class="striped">
+    <thead>
+      <tr>
+        <th><a href='#/list/level'>Level</a></th>
+        <th><a href='#/list/name'>Name</a></th>
+        <th><a href='#/list/arcana'>Arcana</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng:repeat="persona in personae.$orderBy(sortBy).$filter(filter)">
+        <td>{{persona.level}}</td>
+        <td><a href='#/persona/{{persona.name}}'>{{persona.name}}</a></td>
+        <td>{{persona.arcana}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
